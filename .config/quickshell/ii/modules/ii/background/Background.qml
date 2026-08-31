@@ -17,6 +17,7 @@ import Quickshell.Hyprland
 import qs.modules.ii.background.widgets
 import qs.modules.ii.background.widgets.clock
 import qs.modules.ii.background.widgets.weather
+import qs.modules.ii.background.widgets.music
 
 Variants {
     id: root
@@ -264,6 +265,18 @@ Variants {
                         wallpaperScale: 1
                     }
                 }
+
+                FadeLoader {                                       
+                    shown: Config.options.background.widgets.music.enable
+                    sourceComponent: MusicWidget {
+                        screenWidth: bgRoot.screen.width
+                        screenHeight: bgRoot.screen.height
+                        scaledScreenWidth: bgRoot.screen.width
+                        scaledScreenHeight: bgRoot.screen.height
+                        wallpaperScale: 1
+                    }
+                }
+
 
                 FadeLoader {
                     shown: Config.options.background.widgets.clock.enable
